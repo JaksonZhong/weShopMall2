@@ -1,0 +1,12 @@
+<!--pages/template/template.wxml-->
+<template name="quantity">
+  <!-- 主容器 -->  
+  <view class="stepper">  
+      <!-- 减号 -->  
+      <text class="{{delStatus}}"  data-index="{{index}}"bindtap="delCount">-</text>  
+      <!-- 数值 -->  
+      <input type="number" bindchange="bindManual" value="{{item.count}}"  disabled="disabled"/>  
+      <!-- 加号 -->  
+      <text class="{{addStatus}}" data-index="{{index}}" bindtap="addCount">+</text>  
+  </view>  
+</template>

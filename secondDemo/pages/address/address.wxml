@@ -1,0 +1,46 @@
+<!--pages/address/address.wxml-->
+
+<scroll-view class="scroll" scroll-y="true">
+  <view wx:for="{{address}}" bindtap="chooseAddress" data-index="{{index}}" data-id="{{item._id}}" data-receivename="{{item.receiveName}}" data-phone="{{item.phone}}" data-address="{{item.address}}" data-transportday="{{item.transportDay}}">
+    <view class="product-name-wrap">
+
+      <view class="ui-list-item-info">{{item.receiveName}}
+        <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text> {{item.phone}}
+      </view>
+      <view class="ui-list-item-address">
+        {{item.address}}
+      </view>
+      <view class="ui-list-item-time">
+        <p>{{item.transportDay}}</p>
+        <p class="ui-list-item-del" data-id='{{item._id}}' bindtap="delAddress">
+            <image class="del-img" src="../../images/del.png"></image>
+        </p>
+      </view>
+      <view class="separate"></view>
+    </view>
+
+  </view>
+</scroll-view>
+
+<view class="add-address" bindtap="addNewAddress">
+  <image class="add-img"  src="../../images/add.png"></image>新增地址
+</view>
+
+
+<!-- <view class="address">
+  <wux-button block type="light" bindtap="addNewAddress">添加新地址</wux-button>
+
+  <view class="layout-row card" wx:for="{{address}}" data-index="{{index}}" bindtap="chooseAddress">
+    <view class="layout-col texts">
+      <view class="layout-row">
+        <view class="name">{{item.name}}</view>
+        <view class="phone">{{item.phone}}</view>
+      </view>
+      <view class="address">
+      {{item.address}}
+      </view>
+    </view>
+    <view class="btn-edit" data-index="{{index}}" data-id="{{item._id}}" catchtap="deleteAddress">删除</view>
+  
+  </view>
+</view> -->

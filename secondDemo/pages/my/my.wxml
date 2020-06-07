@@ -1,0 +1,88 @@
+<!--pages/my/my.wxml-->
+<!--index.wxml-->
+
+<view class="top">
+  <view class="topCard">
+    <image mode="aspectFill" class="bg" src="../../images/zebraBg.png"></image>
+    <view class="left">
+      <view class="nickName">
+        <open-data type="userNickName"></open-data>
+      </view>
+      <view class="vip">会员积分{{userInfo.sumIntegral}}/{{levelRouLe[userInfo.level]}}
+        <image class="level" src="../../images/l{{userInfo.level}}.png"></image>
+      </view>
+      <progress percent="{{userInfo.integral/levelRouLe[userInfo.level]*100}}" color="#fffd82" />
+      <view class="vip">当前可用积分:{{userInfo.integral}}</view>
+      
+    </view>
+    <view class="userAvatar">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+
+  </view>
+  <view class="zebraVip" bindtap="toQuanyi" wx:if="{{userInfo.sumIntegral<=0}}">
+    <view class="text">
+      <text class="main">斑马会员，立即升级</text>
+      <text class="sub">预计为您节省￥19268/元</text>
+    </view>
+    <view class="btnBox">
+      <button size="mini" class="buyBtn">立即购买</button>
+    </view>
+
+  </view>
+
+
+</view>
+<view class="layout-row tools">
+  <view class="layout-col" bindtap="turnMyOrder">
+    <image class="icon" src="../../images/icon_myOrder.png"></image>
+    <text class="word">我的订单</text>
+  </view>
+  <view class="layout-col" bindtap="turnAddress">
+    <image class="icon" src="../../images/icon_address.png" width=""></image>
+    <text class="word">收货地址</text>
+  </view>
+  <view class="layout-col" bindtap="turnGood">
+    <image class="icon" src="../../images/icon_good.png"></image>
+    <text class="word">用户评分</text>
+  </view>
+  <view class="layout-col kf" bindtap="turnKefu">
+    <image class="icon" src="../../images/icon_help.png"></image>
+    <text class="word">帮助与客服</text>
+    <button class="btn-kf" plain="true" type="default" size="mini" open-type="contact"> 帮助</button>
+  </view>
+  <view class="layout-col manage" bindtap="turnManage">
+    <image class="icon" src="../../images/icon_help.png"></image>
+    <text class="word">管理</text>
+    <button class="btn-kf" plain="true" type="default" size="mini" open-type="contact">管理</button>
+  </view>
+  <!-- <view class="layout-col question" bindtap="toQuestion">
+    <image class="icon" src="../../images/icon_good.png"></image>
+    <text class="word">常见问题</text>
+  </view> -->
+    
+
+</view>
+
+
+
+
+
+<!-- <view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="info_list">
+    <block wx:for="{{userListInfo}}">
+        <view class="weui_cell">
+            <view class="weui_cell_hd"><image src="{{item.icon}}"></image></view>
+            <view class="weui_cell_bd">
+                <view class="weui_cell_bd_p"> {{item.text}} </view>
+            </view>
+            <view wx:if="{{item.isunread}}" class="badge">{{item.unreadNum}}</view>
+            <view class="with_arrow"></view>
+        </view>
+    </block>
+  </view>
+</view> -->

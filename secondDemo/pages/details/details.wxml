@@ -1,0 +1,117 @@
+<view class="main">
+    <view class="goods-box">
+      <view class="goods-info">
+        <input style='display:none' data-value='{{_id}}' name="_id" value='{{Goods._id}}'></input>
+        <image src="{{Goods.goodImg}}" class="goods-thumb"></image>
+        <!-- <input data-value='{{goodName}}' name="goodName" value='{{Goods.goodName}}'></input> -->
+        <view class="newest-text" data-text="{{Goods.goodName}}">{{Goods.goodName}}</view>
+        <navigator open-type="switchTab" url="../cart/index">
+            <view class="carts-icon {{scaleCart?'on':''}}" bindtap="checkCart">
+                <image src="/images/cart2.png"></image>
+                <text class="carts-icon-num" wx:if="{{hasCarts}}">{{totalNum}}</text>
+            </view>
+        </navigator>
+        
+        <view class="goods-operation">
+            <text class="goods-operation-substract" bindtap="substractCount">-</text>
+            <text class="goods-operation-num">数量  {{count}}</text>
+            <text class="goods-operation-add" bindtap="addCount">+</text>
+            <text class="goods-to-cart" bindtap="addCart" data-id='{{Goods._id}}'>加入购物车</text>
+            <image src="/images/cart1.png" class="goods-cart-img" bindtap="addCart" data-id='{{Goods._id}}'></image>
+        </view>
+      </view>
+
+        <image wx:if="{{show}}" src="/images/cart1.png" class="to-carts-icon"></image>
+        <view class="list-item">
+          <view class="goods-title">{{Goods.goodName}}</view>
+        </view>
+        <view class="list-item">
+          <view class="left">积分
+            购买可返回
+            <text style="color:{{textColor}}">{{Goods.integral}}</text>积分</view>
+        </view>
+
+        <!-- <view class="goods-stock">库存：{{Goods.goodStock}}</view> -->
+        <view class="list-item">
+          <view class="left">
+            价格
+            <text class="goods-price" style="color:{{textColor}}">￥{{Goods.goodPrice}}</text>
+          </view>
+        </view>
+
+    </view>
+
+    <view class="goods-tab-box">
+        <view class="goods-tab-nav {{curIndex === 0 ?'on':''}}" bindtap="bindTap" data-index="0">商品详情</view>
+        <view class="goods-tab-nav {{curIndex === 1 ?'on':''}}" bindtap="bindTap" data-index="1">产品参数</view>
+        <view class="goods-tab-nav {{curIndex === 2 ?'on':''}}" bindtap="bindTap" data-index="2">售后保障</view>
+        <view class="goods-content">
+            <view wx:if="{{curIndex === 0}}"><image src="{{Goods.goodDetail}}"></image></view>
+            <view wx:if="{{curIndex === 1}}"><!--{{goods.parameter}}-->正在加载中...</view>
+            <view wx:if="{{curIndex === 2}}"><!--{{goods.service}}-->正在加载中...</view>
+        </view>
+    </view>
+
+  <!-- 底部悬浮栏 -->
+  <!-- <view class="detail-nav">
+    <image bindtap="toCar" src="../../images/detail/detail_btn_cart.png" />
+    <view class="line_nav"></view>
+    <image bindtap="addLike" src="{{isLike?'../../images/detail/detail_btn_mark_selected.png':'../../images/detail/detail_btn_mark_normal.png'}}" />
+    <button class="button-green" bindtap="clickme" formType="submit">加入购物车</button>
+    <button class="button-red" bindtap="immeBuy" formType="submit">立即购买</button>
+  </view> -->
+
+  <!-- //点击下面这句话出现底部弹框 -->
+  <!-- <view class="show" bindtap="clickme">点击我可以看到底部弹框的出现</view>     -->
+    <!--屏幕背景变暗的背景  -->
+      <!-- <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view> -->
+      <!--弹出框  -->
+      <!-- <view animation="{{animationData}}" class="commodity_attr_box" 
+        wx:if="{{showModalStatus}}">在这里写弹出框里面的布局 -->
+
+        <!--加入购物车-->
+<!-- <import src="../template/template.wxml" />
+<view class="dialog {{ showDialog ? 'dialog--show' : '' }}">
+      <view class="dialog__mask" bindtap="toggleDialog" />
+      <view class="dialog__container">
+        <view class="row"> -->
+          <!-- <icon bindtap="closeDialog" class="image-close" type="cancel" size="25"/> -->
+          <!-- <image class="image-sku" src="https://m.360buyimg.com/n12/jfs/t11317/108/1080677336/325163/f4c2a03a/59fd8b17Nbe2fcca3.jpg!q70.jpg"></image> -->
+          <!-- <view class="column">
+            <text class="sku-price">￥7935.84</text>
+            <text class="sku-title">库存20件</text>
+            <text class="sku-title">商品编码：1456778788</text>
+          </view>
+        </view>
+        <text class="border-line"></text>
+        <view class="row">
+          <text >购买数量</text>
+          <view class="quantity-position">
+              <template is="quantity" data="{{ ...quantity1}}" />  
+          </view>
+        </view>
+        <text class="border-line"></text>
+        <button data-goodid="1" class="button-addCar" bindtap="addCar" formType="submit">确定</button>
+      </view>
+    </view>
+
+        <button class="button-red1" bindtap="confirmCart" formType="submit">确定</button> --> -->
+          <!-- <image bindtap="toCar" src="../../images/detail/detail_btn_cart.png" /> -->
+          <!-- <button class="button-green" bindtap="addCar" formType="submit">加入购物车</button>
+          <button class="button-red" bindtap="immeBuy" formType="submit">立即购买</button> -->
+      <!-- </view> -->
+
+
+     <!-- 底部悬浮栏 -->
+<!-- <view class="detail-nav">
+  <image bindtap="toCar" src="../../images/bottomNav/cart.png" />  
+  <view class="line_nav"></view>
+   <image bindtap="addLike" src="{{isLike?'../../images/bottomNav/enshrine_select.png':'../../images/bottomNav/enshrine.png'}}" /> 
+  <button data-goodid="1"  class="button-green" bindtap="toggleDialog" >加入购物车</button>
+  <button class="button-red" bindtap="immeBuy" formType="submit">立即购买</button>
+</view> -->
+
+  
+
+     
+  </view>

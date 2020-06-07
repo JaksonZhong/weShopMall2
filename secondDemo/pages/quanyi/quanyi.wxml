@@ -1,0 +1,34 @@
+<!--pages/quanyi/quanyi.wxml-->
+<!-- <wxs module="filters" src="../util/tofix.wxs"></wxs> -->
+  <swiper class="banner" autoplay="true" circular="true" current="{{bannerCurrent}}">
+    <block wx:for="{{banner}}" wx:key="*this">
+
+      <swiper-item class="swiper-item">
+        <image src="{{item.bgUrl}}" mode="aspectFill"></image>
+      </swiper-item>
+    </block>
+
+  </swiper>
+
+    <view class="products">
+    <view class="product" wx:for="{{products}}">
+      <!-- <view class="newest-list" bindtap="details" data-id='{{item._id}}'> -->
+      <image class="img" mode="aspectFill" src="{{item.goodImg}}"></image>
+      <view class="texts">
+        <view>
+          <text class="title">{{item.goodName}}</text>
+          <view class="subTitle">{{item.goodDesc}}</view>
+          <view class="title">需以200积分换购</view>
+        </view>
+        <view class="bottom">
+          <text class="price">￥{{item.maxOffset}}</text>
+          <text class="oldPrice">原价<text class="oldPrice-detail">￥{{item.goodPrice}}</text></text>
+          <view class="btn-submit btn-qiang" data-id="{{item._id}}" bindtap="goGoodsDetail">积分购</view>
+        </view>
+
+
+      </view>
+    </view>
+
+  </view>
+  <!-- <view bindtap="test">测试</view> -->

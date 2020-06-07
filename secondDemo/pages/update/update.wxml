@@ -1,0 +1,101 @@
+<!--pages/update/update.wxml-->
+<form bindsubmit="update">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">商品名</view>
+        </view>
+        <view class="weui-cell__bd">
+         <input style='display:none' data-value='{{_id}}' name="_id" value='{{Goods._id}}'></input>
+          <input class="weui-input" name="goodName" data-value='{{goodName}}' value='{{Goods.goodName}}'/>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">价格</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="goodPrice" data-value='{{goodPrice}}' value='{{Goods.goodPrice}}'/>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">简述</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="goodDesc" data-value='{{goodDesc}}' value='{{Goods.goodDesc}}'/>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">类型</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="goodType" data-value='{{goodType}}' value='{{Goods.goodType}}'/>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">积分</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="integral" data-value='{{integral}}' value='{{Goods.integral}}'/>
+      </view>
+    </view>
+
+    <view>
+      <button type="default" bindtap="gotoShow" >点击上传照片</button> 
+    </view>
+    <view>
+      <image class= "show-image" mode="aspectFitf" src="{{src}}"></image>
+    </view>
+
+    <!-- <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">图片</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="goodImg" data-value='{{goodImg}}' value='{{Goods.goodImg}}'/>
+      </view>
+    </view> -->
+
+    <button type="primary" form-type="submit">保存</button>
+  </view>
+</form>
+
+
+
+
+<!-- <view class='container'>
+  <view class="updateTitle">修改页面</view>
+   <form bindsubmit='update' >
+    <view class='input-container'>
+      <label>商品名称：</label>
+      <input style='display:none' data-value='{{_id}}' name="_id" value='{{Goods._id}}'></input>
+      <input data-value='{{goodName}}' name="goodName" value='{{Goods.goodName}}'></input>
+    </view>
+    <view class='input-container'>
+      <label>商品简述：</label>
+      <input data-value='{{goodDesc}}' name="goodDesc" value='{{Goods.goodDesc}}'></input>
+    </view>
+    <view class='input-container'>
+      <label>商品价格：</label>
+      <input data-value='{{goodPrice}}'  name ="goodPrice" value='{{Goods.goodPrice}}'></input>
+    </view>
+    <view class='input-container'>
+      <label>商品图片：</label>
+      <input data-value='{{goodImg}}'  name ="goodImg" value='{{Goods.goodImg}}'></input>
+    </view>
+    <view class='input-container'>
+      <label>商品类型：</label>
+      <input data-value='{{goodType}}'  name ="goodType" value='{{Goods.goodType}}'></input>
+    </view>
+    <view class='input-container'>
+      <label>购买积分：</label>
+      <input data-value='{{integral}}'  name ="integral" value='{{Goods.integral}}'></input>
+    </view>
+    <view class='comfirm'>
+      <button  form-type='submit'>修改</button>
+   </view>
+  </form>
+</view> -->

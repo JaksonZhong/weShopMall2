@@ -1,0 +1,42 @@
+
+<!-- 购物车有数据 -->
+<view class="scroll" hidden="{{hidden}}">
+    <scroll-view class="scroll" scroll-y="true">
+    <view class="separate"></view>
+    <!-- 遍历购物车列表 -->
+    <!-- <view wx:for="{{order}}">
+      <view class="cart_container">  
+
+      <image class="item-image" src="{{item.goodImg}}"></image>
+      <import src="../template/template.wxml" /> -->
+      <!-- <view class="column">
+        <text class="title">{{item.goodName}}</text> -->
+          
+          <view class="orders-box">
+            <view wx:for="{{order}}" wx:key="index" class="orders-list" bindtap="toDetailOrder" data-id='{{item._id}}'>
+              <image class="orders-thumb" src="{{item.goodImg}}" data-goodimg="{{item.goodImg}}"></image>
+              <view class="orders-pro-name" data-goodname="{{item.goodName}}">{{item.goodName}}</view>
+              <view class="orders-pro-price" data-goodprice="{{item.goodPrice}}">￥{{item.goodPrice}}</view>
+              <view class="order-count-numAndTotalPrice">
+                <view class="orders-count-num" data-count="{{item.count}}">
+                  ×{{item.count}}
+                  <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+                  <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+                  <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+                  <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+                  <text class="sku-price"><text>合计: </text>￥{{item.totalMoney}}</text>
+                </view>
+              </view>
+              
+            </view>
+            <!-- <view class="row">
+              <text class="sku-price"><text>合计: </text>￥{{item.totalMoney}}</text>          
+            </view> -->
+          </view>
+      <!-- </view>
+    </view> -->
+  <!-- </view> -->
+  </scroll-view>
+  </view>
+
+ 

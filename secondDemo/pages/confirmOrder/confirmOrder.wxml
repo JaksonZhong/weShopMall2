@@ -1,0 +1,41 @@
+<!--pages/confirmOrder/confirmOrder.wxml-->
+
+<view class="main">
+    <navigator url="../address/address">
+        <view wx:if="{{address}}" class="orders-address">
+          <!-- <view wx:for="{{address}}" wx:key="index" class="orders-list"> -->
+          <view wx:for="{{address}}" wx:key="">
+            <view class="orders-address-name" data-receivename="{{item.receiveName}}">收货人: {{item.receiveName}}</view>
+            <view class="orders-address-phone">电话: {{item.phone}}</view>
+            <view class="orders-address-date" data-transportday="{{item.transportDay}}">收货时间: {{item.transportDay}}</view>
+            <view class="orders-address-detail" data-address="{{item.address}}">收货地址：{{item.address}}</view>
+
+          </view>
+          <!-- </view> -->
+        </view>        
+        <view wx:else class="orders-no-address">添加收货地址</view>
+    </navigator>
+
+    <view class="orders-box">
+        <view wx:for="{{order}}" wx:key="index" class="orders-list">
+            <image class="orders-thumb" src="{{item.goodImg}}" data-goodimg="{{item.goodImg}}"></image>
+            <view class="orders-pro-name" data-goodname="{{item.goodName}}">{{item.goodName}}</view>
+            <view class="orders-pro-price" data-goodprice="{{item.goodPrice}}">￥{{item.goodPrice}}</view>
+            <view class="orders-count-num" data-count="{{item.count}}">×{{item.count}}</view>
+        </view>
+    </view>
+    <!-- 备注开始 -->
+    <view class="layout-row remarksColumn">
+    <view class="tag">备注:</view>
+    <input type="text" value="{{remarksColumn}}" placeholder="选填" bindinput="remarksColumnText"></input>
+    <input style='display:none' value='{{integral}}'></input>
+    <!-- <view>{{integral}}</view> -->
+  </view>
+  <!-- 备注结束 -->
+
+    <view class="orders-footer">
+        <view class="orders-footer-total">付款合计：</view>
+        <view class="order-footer-realTotalPrice">￥{{totalMoney}}</view>
+        <view class="orders-footer-btn" bindtap="submitOrder">提交订单</view>
+    </view>
+</view>

@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/classify/index",
+    "pages/my/my",
+    "pages/details/index",
+    "pages/set/set",
+    "pages/update/update",
+    "pages/search/search",
+    "pages/details/details",
+    "pages/template/template",
+    "pages/cart/cart",
+    "pages/order/order",
+    "pages/confirmOrder/confirmOrder",
+    "pages/address/address",
+    "pages/addNewAddress/addNewAddress",
+    "pages/myOrder/myOrder",
+    "pages/detailOrder/detailOrder",
+    "pages/quanyi/quanyi"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "ZebraPrime",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color":"#8c8c8c",
+    "selectedColor":"#353535",
+    "backgroundColor": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/house.png",
+        "selectedIconPath": "images/house_active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/quanyi/quanyi",        
+        "iconPath": "images/zuan.png",
+        "selectedIconPath": "images/zuan_active.png",
+        "text": "权益"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "images/cart.png",
+        "selectedIconPath": "images/cart_active.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_active.png",
+        "text": "个人"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,101 @@
+<!--index.wxml-->
+<!-- <view class="container"> -->
+<view class="main">
+
+  <!-- 轮播 -->
+  <swiper indicator-dots="true" autoplay="true" interval="{{interval}}"   duration="{{duration}}" circular="true">
+        <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+            <swiper-item>
+                <image src="{{item}}" class="slide-image" width="100%"/>
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <!-- 搜索框 -->
+    <view class="search">
+        <navigator url="../search/search">
+            <view class="search-text">
+                <icon class="weui-icon-search_in-box search-icon" type="search" size="14"></icon>
+                搜 索
+            </view>
+        </navigator>
+    </view>
+  
+    <view wx:if="{{Goods}}" class="newest">
+      <view class="newest-title"><text>热卖新品</text></view>
+      <view class="newest">
+          <!-- <block wx:for="{{Goods}}" wx:key=""> -->
+              <!-- <view class="newest-box" bindtap="details" data-id='{{item._id}}'> -->
+              <view class="newest-box">
+                <block wx:for="{{Goods}}" wx:key="">
+                  <view class="newest-list" bindtap="details" data-id='{{item._id}}'>
+                      <!-- <navigator url="../details/details"> -->
+                      <image src="{{item.goodImg}}"></image>
+                      <view class="newest-text">
+                          <text>{{item.goodName}}</text>
+                      </view>
+                      <view class="newest-text">
+                          <text>{{item.goodDesc}}</text>
+                      </view>
+                      <view class="newest-text" style="color:{{textColor}}">
+                        <text>￥{{item.goodPrice}}</text>
+                      </view>
+                      <!-- </navigator> -->
+                  </view>  
+                </block>       
+              </view>
+          <!-- </block> -->
+      </view>
+  </view>
+</view>
+     <!-- <view wx:if="{{Goods}}" class='container'>
+      <view class='title'>
+        <text>商品列表</text>
+      </view>
+      <view class='label'>
+        <text>名称</text>
+        <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+        <text>简述</text>
+        <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+        <text>价格</text>
+        <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+        <text>操作</text>
+      </view>
+  
+    <block wx:for="{{Goods}}" wx:key="">
+      <view class='content'>
+        <text>{{item.goodName}}</text>
+        <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+        <text>{{item.goodDesc}}</text>
+        <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+        <text>{{item.goodPrice}}</text>
+        <button class='del' type="primary" data-id='{{item._id}}' bindtap='onUpdate'>修改</button>
+        <button class='update' type="warn" data-id='{{item._id}}' bindtap='onDel'>删除</button>
+       </view>
+    </block>
+</view>
+<view wx:else="{{Goods}}" class='none'>
+   <text >暂时没有商品！</text>
+</view>   -->
+
+  <!-- <view wx:if="{{Goods}}" class='container'> -->
+  
+
+<!-- <view class='add'>
+  <button bindtap='goSet'>添加图书</button>
+</view> -->
+<!-- <form bindsubmit="formSubmit">
+  <input type="text" name="id" placeholder='输入关键词' style='border:1px solid #ccc;height:30px;'/>
+  <button formType="submit" class="btn">搜索</button>    
+</form> -->
+<!-- <button formType="submit" class="btn" bindtap='onQuery'>查询全部数据</button> -->
+<!--<button formType="submit" class="btn" bindtap='search'>test</button>-->
+   
+<!-- <view>搜索结果</view>
+<view wx:for="{{re}}" wx:key="re">
+  <view style='color:#f00;'>{{item.result}}</view>
+  <view style='color:green;'>{{item.title}}</view>
+</view> -->
+
+  <!-- <button formType="button" class="search_btn" bindtap='search'>搜索</button>     -->
+<!-- </view> -->

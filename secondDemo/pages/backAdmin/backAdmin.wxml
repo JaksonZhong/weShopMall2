@@ -1,0 +1,60 @@
+<view class="container">
+    <view class="adminTitle">后台管理</view>
+    <view wx:if="{{Goods}}" class='container'>
+        <view class='title'>
+          <!-- <text>商品列表</text> -->
+        </view>
+        <view class='label'>
+          <text>名称</text>
+          <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+          <text>简述</text>
+          <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+          <text>价格</text>
+          <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+          <text>操作</text>
+        </view>
+  
+        <block wx:for="{{Goods}}" wx:key="">
+          <view class='content'>
+            <text>{{item.goodName}}</text>
+            <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+            <text>{{item.goodDesc}}</text>
+            <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+            <text>{{item.goodPrice}}</text>
+            <button class='update' type="primary" data-id='{{item._id}}' bindtap='onUpdate'>修改</button>
+            <button class='del' type="warn" data-id='{{item._id}}' bindtap='onDel'>删除</button>
+          </view>
+        </block>
+    </view>
+
+    <view wx:else="{{Goods}}" class='none'>
+      <text >暂时没有商品！</text>
+    </view>  
+    <!-- <view wx:if="{{Goods}}" class='container'> -->  
+    <view class='placeholder-view'></view>  
+    <view class="addClass">
+      <button bindtap='goSet' style='position:fixed;width:100%;bottom:0;'>添加图书</button>
+    </view>
+  <!-- </view> -->
+</view>
+
+<!-- <view class="table">
+  <view class="tr bg-w">
+    <view class="th">名称</view>
+    <view class="th">简述</view>
+    <view class="th ">价格</view>
+  </view>
+  <block wx:for="{{Goods}}" wx:key="{{code}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{item.goodName}}</view>
+      <view class="td">{{item.goodDesc}}</view>
+      <view class="td">{{item.goodPrice}}</view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{item.goodName}}</view>
+      <view class="td">{{item.goodDesc}}</view>
+      <view class="td">{{item.goodPrice}}</view>
+    </view>
+  </block>
+</view> -->
+

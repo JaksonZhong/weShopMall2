@@ -1,0 +1,47 @@
+<!--pages/confirmOrder/confirmOrder.wxml-->
+
+<view class="main">
+ <input style='display:none' data-value='{{_id}}' name="_id" value='{{order._id}}'></input>
+  <view class="orders-address">
+      <view class="orders-address-name" >收货人: {{order.receiveName}}</view>
+      <view class="orders-address-phone">电话: {{order.phone}}</view>
+      <view class="orders-address-date">收货时间: {{order.transportDay}}</view>
+      <view class="orders-address-detail">收货地址：{{order.address}}</view>
+  </view>
+  <view class="orders-box">
+    <view class="orders-list">
+    <image class="orders-thumb" src="{{order.goodImg}}"></image>
+    <view class="orders-pro-name">{{order.goodName}}</view>
+    <view class="orders-pro-price">￥{{order.goodPrice}}</view>
+    <view class="orders-count-num">
+      ×{{order.count}}
+      <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+      <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+      <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+      <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+      <text>合计: <text class="sku-price">￥{{order.totalMoney}}</text></text>
+    </view>
+    <!-- <view>￥{{order.totalMoney}}</view> -->
+    </view>
+  </view>
+
+  <view class="orderMsg">
+    <view>订单信息</view>
+    <view>
+      <text>订单编号:<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>{{order.orderNo}}</text>
+      <!-- <view>{{order.orderNo}}</view> -->
+    </view>
+    <view>
+      <text>创建时间:<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>{{order.createTime}}</text>
+      <!-- <view>{{order.createTime}}</view> -->
+    </view>
+    <view>
+      <text>订单状态:<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>{{order.state}}</text>
+      <!-- <view>{{order.state}}</view> -->
+    </view>
+    <view>
+      <text>积分:<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>{{order.integral}}</text>
+      <!-- <view>{{order.state}}</view> -->
+    </view>
+  </view>
+</view>
